@@ -100,10 +100,10 @@ jobs:
 
           # 调整SN和MAC,最好使用 actions secrets 引入,SN应该是固定值不应该每次生成
           sn=`./redpill_tool_chain.sh sn ${{matrix.platform}} | grep 'Serial Number' | awk '{print $3}'`
-          sed -i -e "s/1234XXX123/${sn:="20A0S7RRYVGMM"}/g" -e 's/XXYYXXYYXXYY/001132DFE863/g' ${{matrix.platform}}_user_config.json
+          sed -i -e "s/1234XXX123/${sn:="自己sn号"}/g" -e 's/XXYYXXYYXXYY/自己mac1/g' ${{matrix.platform}}_user_config.json
 
           # 添加第二张网卡mac并设置网卡数量
-          sed -i -e 's/0011323D47F7"/&,\n\t"mac2": "001132DFE864",\n\t"netif_num": 2/' ${{matrix.platform}}_user_config.json
+          sed -i -e 's/0011323D47F7"/&,\n\t"mac2": "自己mac2",\n\t"netif_num": 2/' ${{matrix.platform}}_user_config.json
 
           # 调整synoinfo
           sed -i -e 's/"synoinfo": {},/"synoinfo": {\n\t"maxlanport": "2"\n    },/' ${{matrix.platform}}_user_config.json
@@ -118,7 +118,8 @@ jobs:
           ./redpill_tool_chain.sh add https://github.com/tossp/redpill-tool-chain/raw/master/extensions/redpill-virtio.json
           ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/tg3/rpext-index.json
           ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/igbvf/rpext-index.json
-          
+          #注意以上填写文本里的url
+
       - name: 添加扩展驱动[dva3221]
         if: matrix.platform == 'dva3221'
         run: |
