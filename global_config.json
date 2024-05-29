@@ -34,7 +34,7 @@
         },
         "toolkit_dev": {
           "url": "https://sourceforge.net/projects/dsgpl/files/toolkit/DSM7.0/ds.v1000-7.0.dev.txz/download",
-          "sha256": "6108f9f7b7f0a13ee985314aef9419303375ab7ded4112be991590339b66ecd1"
+          "sha256": "eca89a9425164ad2c04bc584a19a5ff878cfa830ac35274105c78b6bb4358077"
         }
       },
       "redpill_lkm": {
@@ -65,7 +65,7 @@
         },
         "toolkit_dev": {
           "url": "https://sourceforge.net/projects/dsgpl/files/toolkit/DSM7.0/ds.v1000-7.0.dev.txz/download",
-          "sha256": "6108f9f7b7f0a13ee985314aef9419303375ab7ded4112be991590339b66ecd1"
+          "sha256": "eca89a9425164ad2c04bc584a19a5ff878cfa830ac35274105c78b6bb4358077"
         }
       },
       "redpill_lkm": {
@@ -92,7 +92,7 @@
         },
         "toolkit_dev": {
           "url": "https://sourceforge.net/projects/dsgpl/files/toolkit/DSM7.0/ds.v1000-7.0.dev.txz/download",
-          "sha256": "6108f9f7b7f0a13ee985314aef9419303375ab7ded4112be991590339b66ecd1"
+          "sha256": "eca89a9425164ad2c04bc584a19a5ff878cfa830ac35274105c78b6bb4358077"
         }
       },
       "redpill_lkm": {
