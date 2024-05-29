@@ -68,10 +68,10 @@ jobs:
 
     steps:
       - name: 检出项目文件
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: 缓存加速
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             cache/*.pat
@@ -99,11 +99,11 @@ jobs:
           sed -i -e 's/0x0001/0x88AA/g' -e 's/0x46f4/0x88AA/g' ${{matrix.platform}}_user_config.json
 
           # 调整SN和MAC,最好使用 actions secrets 引入,SN应该是固定值不应该每次生成
-          sn=`./redpill_tool_chain.sh sn ${{matrix.platform}} | grep 'Serial Number' | awk '{print $3}'`
-          sed -i -e "s/1234XXX123/${sn:="自己sn号"}/g" -e 's/XXYYXXYYXXYY/自己mac1/g' ${{matrix.platform}}_user_config.json
+          #sn=`./redpill_tool_chain.sh sn ${{matrix.platform}} | grep 'Serial Number' | awk '{print $3}'`
+          #sed -i -e "s/1234XXX123/${sn:="自己sn号"}/g" -e 's/XXYYXXYYXXYY/自己mac1/g' ${{matrix.platform}}_user_config.json
 
           # 添加第二张网卡mac并设置网卡数量
-          sed -i -e 's/0011323D47F7"/&,\n\t"mac2": "自己mac2",\n\t"netif_num": 2/' ${{matrix.platform}}_user_config.json
+          #sed -i -e 's/0011323D47F7"/&,\n\t"mac2": "自己mac2",\n\t"netif_num": 2/' ${{matrix.platform}}_user_config.json
 
           # 调整synoinfo
           sed -i -e 's/"synoinfo": {},/"synoinfo": {\n\t"maxlanport": "2"\n    },/' ${{matrix.platform}}_user_config.json
